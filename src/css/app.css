@@ -1,7 +1,13 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding: 16px;
+  color: #ffffff;
   margin-right: auto;
   margin-left: auto;
-  width: 780px;
+  width: 960px;
+  background: #333333;
 }

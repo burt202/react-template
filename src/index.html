@@ -1,14 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>Template</title>
-    <meta http-equiv="last-modified" content="{{ lastModified }}" />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta
+      http-equiv="last-updated"
+      content="<%= new Date(lastUpdated).toISOString() %>"
+    />
     <link rel="icon" href="favicon.ico" />
-    {% if production %}
+    <% if (production) { %>
     <link rel="stylesheet" href="bundle.css" />
-    {% endif %}
+    <% } %>
   </head>
   <body>
     <div class="container"></div>
