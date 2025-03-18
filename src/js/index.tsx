@@ -1,12 +1,11 @@
-// eslint-disable-next-line
-declare var VERSION: string
+import "../css/app.css"
 
 import * as React from "react"
 import {createRoot} from "react-dom/client"
 
 import App from "./app"
 
-import "../css/app.css"
+declare let VERSION: string
 
 const container = document.body.querySelector(".container") as Element
 const root = createRoot(container)

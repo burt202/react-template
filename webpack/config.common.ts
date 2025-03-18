@@ -1,7 +1,7 @@
-import * as path from "path"
-import * as webpack from "webpack"
+import path from "path"
+import webpack from "webpack"
 
-import packageJson = require("../package.json")
+import packageJson from "../package.json"
 
 const config: webpack.Configuration = {
   entry: ["./src/js/index.tsx"],
