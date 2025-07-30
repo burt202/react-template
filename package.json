@@ -4,38 +4,38 @@
   "scripts": {
     "prepare": "husky",
     "lint": "eslint",
-    "prettier-check": "prettier \"**/*.ts{,x}\" --check",
+    "prettier-check": "prettier \"**/*.{ts,tsx,json,html,css,md}\" --check",
     "pre-commit": "npm run lint && npm run prettier-check",
     "dev": "webpack serve --config ./webpack/config.dev.ts",
     "build": "rm -rf build; webpack --progress --config ./webpack/config.prod.ts"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@types/node": "^22.13.9",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
+    "@types/node": "^22.16.5",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "css-loader": "^7.1.2",
     "css-minimizer-webpack-plugin": "^7.0.2",
-    "eslint": "^9.21.0",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-react": "^7.37.4",
+    "eslint": "^9.32.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "html-webpack-plugin": "^5.6.3",
     "husky": "^9.1.7",
     "mini-css-extract-plugin": "^2.9.2",
-    "prettier": "^3.5.3",
+    "prettier": "^3.6.2",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.2",
-    "typescript-eslint": "^8.26.0",
-    "webpack": "^5.98.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.38.0",
+    "webpack": "^5.100.2",
     "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.0",
+    "webpack-dev-server": "^5.2.2",
     "webpack-merge": "^6.0.1"
   }
 }
