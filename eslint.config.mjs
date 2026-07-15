@@ -28,7 +28,7 @@ export default [
   },
   eslintJs.configs.recommended,
   ...tsEslint.configs.recommended,
-  ...tsEslint.configs.recommendedTypeChecked,
+  ...tsEslint.configs.strictTypeChecked,
   importPlugin.flatConfigs.recommended,
   {
     plugins: {
@@ -39,7 +39,9 @@ export default [
     rules: {
       ...pluginReact.configs.flat.recommended.rules,
       ...pluginReactHooks.configs.recommended.rules,
+      complexity: ["error", {max: 15}],
       eqeqeq: "error",
+      "no-console": ["warn", {allow: ["info", "warn", "error"]}],
       "object-shorthand": "error",
       "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": [
@@ -50,10 +52,15 @@ export default [
       ],
       "react/react-in-jsx-scope": "off",
       "simple-import-sort/imports": "error",
+      "simple-import-sort/exports": "error",
       "import/no-unresolved": "off",
       "import/first": "error",
       "import/newline-after-import": "error",
       "import/no-duplicates": "error",
+      "react-hooks/incompatible-library": "off",
+      "@typescript-eslint/restrict-template-expressions": "off",
+      "@typescript-eslint/no-confusing-void-expression": "off",
+      "@typescript-eslint/no-unnecessary-type-parameters": "off",
     },
   },
 ]
