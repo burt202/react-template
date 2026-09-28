@@ -1,5 +1,4 @@
 import HtmlWebpackPlugin from "html-webpack-plugin"
-import webpack from "webpack"
 import {merge} from "webpack-merge"
 
 import common from "./config.common"
@@ -18,17 +17,19 @@ export default merge(common, {
     ],
   },
   plugins: [
-    new webpack.DefinePlugin({
-      "process.env": {
-        LAST_UPDATED: lastUpdated,
-      },
-    }),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       inject: false,
-      templateParameters: {
-        production: false,
-        lastUpdated,
+      templateParameters: (compilation) => {
+        const assets = compilation.getAssets()
+
+        return {
+          production: false,
+          lastUpdated,
+          siteTitle: "Dev Build",
+          jsFile: assets.find((a) => a.name.endsWith(".js"))?.name,
+          cssFile: assets.find((a) => a.name.endsWith(".css"))?.name,
+        }
       },
     }),
   ],

@@ -5,9 +5,12 @@ import {createRoot} from "react-dom/client"
 
 import App from "./app"
 
-declare let VERSION: string
-
 const container = document.body.querySelector(".container") as Element
 const root = createRoot(container)
 
-root.render(<App version={VERSION} />)
+root.render(
+  <App
+    lastUpdated={process.env.LAST_UPDATED ?? ""}
+    gitHash={process.env.GIT_HASH ?? ""}
+  />,
+)

@@ -1,14 +1,19 @@
+import {execSync} from "child_process"
+import CopyWebpackPlugin from "copy-webpack-plugin"
 import path from "path"
 import webpack from "webpack"
 
-import packageJson from "../package.json"
+const lastUpdated = Date.now()
+
+const gitHash = execSync("git rev-parse --short HEAD").toString().trim()
 
 const config: webpack.Configuration = {
   entry: ["./src/js/index.tsx"],
   output: {
     publicPath: "/",
     path: path.join(__dirname, "../build"),
-    filename: "bundle.js",
+    filename: "bundle.[contenthash].js",
+    clean: true,
   },
   module: {
     rules: [
@@ -23,8 +28,14 @@ const config: webpack.Configuration = {
     extensions: [".tsx", ".ts", ".js"],
   },
   plugins: [
+    new CopyWebpackPlugin({
+      patterns: [{from: "src/favicon.png", to: "favicon.png"}],
+    }),
     new webpack.DefinePlugin({
-      VERSION: JSON.stringify(packageJson.version),
+      "process.env": {
+        LAST_UPDATED: lastUpdated,
+        GIT_HASH: JSON.stringify(gitHash),
+      },
     }),
   ],
 }

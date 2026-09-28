@@ -3,11 +3,16 @@ import "../css/app.css"
 import * as React from "react"
 
 interface AppProps {
-  version: string
+  lastUpdated: string
+  gitHash: string
 }
 
-function App({version}: AppProps) {
-  return <div>Hello world v{version}</div>
+function App({lastUpdated, gitHash}: AppProps) {
+  return (
+    <div>
+      Hello world, {lastUpdated} {gitHash}
+    </div>
+  )
 }
 
 export default App

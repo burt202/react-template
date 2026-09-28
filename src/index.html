@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Template</title>
+    <title><%= siteTitle %></title>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
@@ -11,13 +11,13 @@
       http-equiv="last-updated"
       content="<%= new Date(lastUpdated).toISOString() %>"
     />
-    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" href="/favicon.png" />
     <% if (production) { %>
-    <link rel="stylesheet" href="bundle.css" />
+    <link rel="stylesheet" href="/<%= cssFile %>" />
     <% } %>
   </head>
   <body>
     <div class="container"></div>
-    <script src="bundle.js"></script>
+    <script src="/<%= jsFile %>"></script>
   </body>
 </html>
