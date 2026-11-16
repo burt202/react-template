@@ -41,6 +41,13 @@ export default [
       ...pluginReactHooks.configs.recommended.rules,
       complexity: ["error", {max: 15}],
       eqeqeq: "error",
+      camelcase: [
+        "error",
+        {
+          ignoreImports: true,
+          properties: "never",
+        },
+      ],
       "no-console": ["warn", {allow: ["info", "warn", "error"]}],
       "object-shorthand": "error",
       "no-unused-vars": "off",
@@ -58,8 +65,6 @@ export default [
       "import/newline-after-import": "error",
       "import/no-duplicates": "error",
       "react-hooks/incompatible-library": "off",
-      "@typescript-eslint/restrict-template-expressions": "off",
-      "@typescript-eslint/no-confusing-void-expression": "off",
       "@typescript-eslint/no-unnecessary-type-parameters": "off",
     },
   },
